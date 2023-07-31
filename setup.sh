@@ -63,7 +63,7 @@ kubectl create namespace a-team
 export INGRESS_CLASS=$(kubectl get ingressclasses \
     --output jsonpath="{.items[0].metadata.name}")
 
-INGRESS_HOST=$(gum input --placeholder "What is the external IP of the Ingress service" --value "127.0.0.1")
+INGRESS_HOST=$(gum input --placeholder "What is the external IP of the Ingress service")
 echo "export INGRESS_HOST=$INGRESS_HOST" >> .env
 
 yq --inplace \
